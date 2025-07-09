@@ -61,9 +61,24 @@ public class FirstMod {
     
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-    	if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+    	if (event.getTabKey() == CreativeModeTabs.COMBAT
+    			|| event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS
+    			|| event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS
+    			|| event.getTabKey() == CreativeModeTabs.INGREDIENTS
+    			|| event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS
+    			|| event.getTabKey() == CreativeModeTabs.SPAWN_EGGS
+    			|| event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES
+    			|| event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS
+    			|| event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS
+    			|| event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS
+    			) {
     		event.accept(ModItems.POOP);
     	}
+    	if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+    		event.accept(ModItems.EMOJI);
+    	}
+
+    	
     	
     }
 
