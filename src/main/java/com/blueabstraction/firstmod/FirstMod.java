@@ -30,12 +30,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(FirstMod.MOD_ID)
 public class FirstMod {
-	// Define mod id in a common place for everything to reference
+
 	public static final String MOD_ID = "firstmodblueabstraction";
-	// Directly reference a slf4j logger
 	private static final Logger LOGGER = LogUtils.getLogger();
 
     public FirstMod() {
@@ -61,17 +59,7 @@ public class FirstMod {
     
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-    	if (event.getTabKey() == CreativeModeTabs.COMBAT
-    			|| event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS
-    			|| event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS
-    			|| event.getTabKey() == CreativeModeTabs.INGREDIENTS
-    			|| event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS
-    			|| event.getTabKey() == CreativeModeTabs.SPAWN_EGGS
-    			|| event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES
-    			|| event.getTabKey() == CreativeModeTabs.COLORED_BLOCKS
-    			|| event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS
-    			|| event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS
-    			) {
+    	if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
     		event.accept(ModItems.POOP);
     	}
     	if (event.getTabKey() == CreativeModeTabs.COMBAT) {
